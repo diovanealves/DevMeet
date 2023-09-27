@@ -1,8 +1,15 @@
 import { Text, View, Image } from 'react-native'
 import PersonWelcome from '../assets/PersonWelcome.png'
 import MyButton from '../components/MyButton'
+import { markWelcomeScreenAsShow } from '../utils/AsyncStorageUtils'
 
-export default function Welcome() {
+export default function Welcome({ navigation }: any) {
+  async function handleContinue() {
+    markWelcomeScreenAsShow().then(() => {
+      navigation.navigate('Main')
+    })
+  }
+
   return (
     <View className="flex-1 items-center justify-center bg-background px-2">
       <View className="space-y-1">
@@ -25,6 +32,7 @@ export default function Welcome() {
         iconColor="#FFFFFF"
         iconSize={36}
         style="bg-orange px-3 py-2 rounded-lg"
+        onPress={handleContinue}
       />
     </View>
   )

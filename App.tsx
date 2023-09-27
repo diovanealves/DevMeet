@@ -7,8 +7,8 @@ import {
   Epilogue_700Bold,
   Epilogue_800ExtraBold,
 } from '@expo-google-fonts/epilogue'
-import Welcome from './src/screens/Welcome'
 import Loading from './src/components/Loading'
+import Routes from './src/routes/Routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,8 +24,8 @@ export default function App() {
 
   return (
     <>
-      <Welcome />
       <StatusBar backgroundColor="#282828" style="light" />
+      <Routes />
     </>
   )
 }

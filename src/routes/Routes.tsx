@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import { hasShownWelcomeScreen } from '../utils/AsyncStorageUtils'
-import WelcomeNavigation from './WelcomeNavigation'
+import AllPages from './AllPages'
 import MainNavigation from './MainNavigation'
 
 export default function Routes() {
@@ -17,9 +17,5 @@ export default function Routes() {
     })
   }, [])
 
-  return (
-    <>
-      {showWelcomeScreen === true ? <WelcomeNavigation /> : <MainNavigation />}
-    </>
-  )
+  return <>{showWelcomeScreen === true ? <AllPages /> : <MainNavigation />}</>
 }

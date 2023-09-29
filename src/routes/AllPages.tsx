@@ -6,7 +6,7 @@ import Welcome from '../screens/Welcome'
 import Main from '../screens/Main'
 const Stack = createNativeStackNavigator()
 
-export default function WelcomeNavigation() {
+export default function AllPages() {
   return (
     <NavigationContainer>
       <Stack.Navigator

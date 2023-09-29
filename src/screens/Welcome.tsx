@@ -2,8 +2,9 @@ import { Text, View, Image } from 'react-native'
 import PersonWelcome from '../assets/PersonWelcome.png'
 import MyButton from '../components/MyButton'
 import { markWelcomeScreenAsShow } from '../utils/AsyncStorageUtils'
+import { NavigationProps } from '../@types/navigation'
 
-export default function Welcome({ navigation }: any) {
+export default function Welcome({ navigation }: NavigationProps<'Welcome'>) {
   async function handleContinue() {
     markWelcomeScreenAsShow().then(() => {
       navigation.navigate('Main')

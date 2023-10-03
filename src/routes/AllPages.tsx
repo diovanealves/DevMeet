@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Welcome from '../screens/Welcome'
 import Main from '../screens/Main'
+import Events from '../screens/Events'
+
 const Stack = createNativeStackNavigator()
 
 export default function AllPages() {
@@ -16,6 +18,7 @@ export default function AllPages() {
       >
         <Stack.Screen name="Welcome" component={Welcome as React.FC} />
         <Stack.Screen name="Main" component={Main as React.FC} />
+        <Stack.Screen name="Events" component={Events as React.FC} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -4,6 +4,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 export type ListaTelas = {
   Welcome: undefined
   Main: undefined
+  Events: undefined
 }
 
 export type NavigationProps<T extends keyof ListaTelas> = {

@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Main from '../screens/Main'
+import Events from '../screens/Events'
 const Stack = createNativeStackNavigator()
 
 export default function MainNavigation() {
@@ -13,11 +14,8 @@ export default function MainNavigation() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="Main"
-          component={Main as React.FC}
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="Main" component={Main as React.FC} />
+        <Stack.Screen name="Events" component={Events as React.FC} />
       </Stack.Navigator>
     </NavigationContainer>
   )

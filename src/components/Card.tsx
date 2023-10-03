@@ -8,7 +8,7 @@ import {
 interface CardProps {
   icon: ImageSourcePropType
   title: string
-  events: string
+  eventsCount: number
   style?: string
   onPress?: () => void
 }
@@ -16,14 +16,16 @@ interface CardProps {
 export default function Card({
   icon,
   title,
-  events,
+  eventsCount,
   style,
   onPress,
   ...rest
 }: CardProps) {
   return (
     <TouchableOpacity
-      className={`bg-white w-44 h-44 flex flex-col justify-between p-3 rounded-xl ${style}`}
+      className={`bg-white w-44 h-44 flex flex-col justify-between p-3 rounded-xl ${
+        eventsCount > 0 ? 'opacity-100' : 'hidden'
+      } ${style}`}
       onPress={onPress}
       {...rest}
     >
@@ -31,9 +33,14 @@ export default function Card({
       <>
         <Text className="text-base font-bold">{title}</Text>
       </>
-      <Text className="flex text-orange font-bold">
-        {events} <Text className="text-gray">encontrados</Text>
-      </Text>
+
+      {eventsCount > 0 ? (
+        <Text className="flex text-orange font-bold">
+          {eventsCount} <Text className="text-gray">encontrados</Text>
+        </Text>
+      ) : (
+        <Text></Text>
+      )}
     </TouchableOpacity>
   )
 }

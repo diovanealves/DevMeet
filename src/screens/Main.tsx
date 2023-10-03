@@ -1,21 +1,24 @@
-import { ScrollView, Text, FlatList } from 'react-native'
+import { Text, FlatList } from 'react-native'
 
 import { NavigationProps } from '../@types/navigation'
 import Card from '../components/Card'
-import { cardData } from '../utils/MockCardData'
+import { cardDataWithEventsCounts } from '../utils/MockCardData'
 
 export default function Main({ navigation }: NavigationProps<'Main'>) {
   return (
     <FlatList
       className="bg-background"
-      data={cardData}
+      data={cardDataWithEventsCounts}
       numColumns={2}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Card
           icon={item.icon}
           title={item.title}
-          events={item.events}
+          eventsCount={item.eventsCount}
+          onPress={() => {
+            item.eventsCount > 0 && navigation.navigate('Events')
+          }}
           style="mb-2 mr-2"
         />
       )}

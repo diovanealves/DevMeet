@@ -12,40 +12,60 @@ const cardData = [
     id: '1',
     icon: ServerlessIcon,
     title: 'Serverless',
-    events: '5 eventos',
+    events: [
+      { id: 1, name: 'Serverless', description: 'Evento 1' },
+      { id: 2, name: 'Serverless', description: 'Evento 1' },
+    ],
   },
   {
     id: '2',
     icon: FrontEndIcon,
     title: 'Desenvolvimento Front-end',
-    events: '3 eventos',
+    events: [{ id: 1, name: 'Front-end', description: 'Evento 1' }],
   },
-  { id: '3', icon: GitandDevOps, title: 'Git e DevOps', events: '3 eventos' },
+  {
+    id: '3',
+    icon: GitandDevOps,
+    title: 'Git e DevOps',
+    events: [{ id: 1, name: 'Git Push', description: 'Evento 1' }],
+  },
   {
     id: '4',
     icon: AgileIcon,
     title: 'Agile e gestão de projetos',
-    events: '3 eventos',
+    events: [{ id: 1, name: 'Gerindo Projetos', description: 'Evento 1' }],
   },
   {
     id: '5',
     icon: InterfaceIcon,
     title: 'Construindo Interfaces',
-    events: '3 eventos',
+    events: [{ id: 1, name: 'Interfaces em java', description: 'Evento 1' }],
   },
-  { id: '6', icon: LinuxIcon, title: 'Servidores Linux', events: '3 eventos' },
+  {
+    id: '6',
+    icon: LinuxIcon,
+    title: 'Servidores Linux',
+    events: [
+      { id: 1, name: 'Subindo um servidor na nuvem', description: 'Evento 1' },
+    ],
+  },
   {
     id: '7',
     icon: DesignIcon,
     title: 'Design de Interfaces',
-    events: '3 eventos',
+    events: [{ id: 1, name: 'Design', description: 'Evento 1' }],
   },
   {
     id: '8',
     icon: MobileIcon,
     title: 'Desenvolvimento Mobile',
-    events: '3 eventos',
+    events: [{ id: 1, name: 'React-native', description: 'Evento 1' }],
   },
 ]
 
-export { cardData }
+const cardDataWithEventsCounts = cardData.map((card) => ({
+  ...card,
+  eventsCount: card.events.length,
+}))
+
+export { cardDataWithEventsCounts }

@@ -1,7 +1,6 @@
-import { Text, FlatList } from 'react-native'
+import { TouchableOpacity, Text, FlatList, Image } from 'react-native'
 
 import { NavigationProps } from '../@types/navigation'
-import Card from '../components/Card'
 import { cardDataWithEventsCounts } from '../utils/MockCardData'
 
 export default function Main({ navigation }: NavigationProps<'Main'>) {
@@ -12,15 +11,24 @@ export default function Main({ navigation }: NavigationProps<'Main'>) {
       numColumns={2}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
-        <Card
-          icon={item.icon}
-          title={item.title}
-          eventsCount={item.eventsCount}
-          onPress={() => {
-            item.eventsCount > 0 && navigation.navigate('Events')
-          }}
-          style="mb-2 mr-2"
-        />
+        <TouchableOpacity
+          key={item.id}
+          className={`bg-white w-44 h-44 flex flex-col justify-between p-3 rounded-xl m-2 ${
+            item.eventsCount > 0 ? '' : 'hidden'
+          }`}
+          onPress={() => navigation.navigate('Events', { events: item.events })}
+        >
+          <Image source={item.icon} alt={item.title} />
+
+          <Text text-base font-bold>
+            {item.title}
+          </Text>
+
+          <Text className="flex text-orange font-bold">
+            {item.eventsCount} eventos{' '}
+            <Text className="text-gray">encontrados</Text>
+          </Text>
+        </TouchableOpacity>
       )}
       ListHeaderComponent={
         <>
@@ -34,9 +42,10 @@ export default function Main({ navigation }: NavigationProps<'Main'>) {
       }
       contentContainerStyle={{
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         paddingTop: 60,
+        paddingHorizontal: 25,
         paddingBottom: 20,
       }}
     />

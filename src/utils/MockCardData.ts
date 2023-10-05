@@ -13,53 +13,111 @@ const cardData = [
     icon: ServerlessIcon,
     title: 'Serverless',
     events: [
-      { id: 1, name: 'Serverless', description: 'Evento 1' },
-      { id: 2, name: 'Serverless', description: 'Evento 1' },
+      {
+        id: 1,
+        name: 'Serverless',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
     ],
   },
   {
     id: '2',
     icon: FrontEndIcon,
     title: 'Desenvolvimento Front-end',
-    events: [{ id: 1, name: 'Front-end', description: 'Evento 1' }],
+    events: [
+      {
+        id: 1,
+        name: 'Desenvolvimento Front-end',
+        description: 'Evento 1',
+        date: '07/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
+    ],
   },
   {
     id: '3',
     icon: GitandDevOps,
     title: 'Git e DevOps',
-    events: [{ id: 1, name: 'Git Push', description: 'Evento 1' }],
+    events: [
+      {
+        id: 1,
+        name: 'Git e DevOps',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
+    ],
   },
   {
     id: '4',
     icon: AgileIcon,
     title: 'Agile e gestão de projetos',
-    events: [{ id: 1, name: 'Gerindo Projetos', description: 'Evento 1' }],
+    events: [
+      {
+        id: 1,
+        name: 'Agile',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
+    ],
   },
   {
     id: '5',
     icon: InterfaceIcon,
     title: 'Construindo Interfaces',
-    events: [{ id: 1, name: 'Interfaces em java', description: 'Evento 1' }],
+    events: [
+      {
+        id: 1,
+        name: 'Construindo Interfaces',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
+    ],
   },
   {
     id: '6',
     icon: LinuxIcon,
     title: 'Servidores Linux',
     events: [
-      { id: 1, name: 'Subindo um servidor na nuvem', description: 'Evento 1' },
+      {
+        id: 1,
+        name: 'Servidores Linux',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
     ],
   },
   {
     id: '7',
     icon: DesignIcon,
     title: 'Design de Interfaces',
-    events: [{ id: 1, name: 'Design', description: 'Evento 1' }],
+    events: [
+      {
+        id: 1,
+        name: 'Design de Interfaces',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
+    ],
   },
   {
     id: '8',
     icon: MobileIcon,
     title: 'Desenvolvimento Mobile',
-    events: [{ id: 1, name: 'React-native', description: 'Evento 1' }],
+    events: [],
   },
 ]
 

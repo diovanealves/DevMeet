@@ -1,11 +1,11 @@
 import { RouteProp } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { Events } from '../interface/Events'
 
 export type ListaTelas = {
   Welcome: undefined
   Main: undefined
-  Events: { events: Events[] }
+  Events: { id: number }
+  Details: { categoryId: number; eventId: number }
 }
 
 export type NavigationProps<T extends keyof ListaTelas> = {

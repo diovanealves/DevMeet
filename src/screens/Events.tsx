@@ -1,23 +1,28 @@
 import { FlatList, View, Text } from 'react-native'
 import { NavigationProps } from '../@types/navigation'
 import MyButton from '../components/MyButton'
+import { cardDataWithEventsCounts as MockEvents } from '../utils/MockCardData'
+import { EventsProps } from '../interface/Events'
 
 export default function Events({
   route,
   navigation,
 }: NavigationProps<'Events'>) {
-  const { events } = route.params
+  const { id } = route.params
+  let eventsData: EventsProps[] = []
+
+  const categoriesData = MockEvents.find((Events) => Events.id === id)
+  if (categoriesData) {
+    eventsData = categoriesData.events
+  }
 
   return (
     <FlatList
       className="bg-background"
-      data={events}
-      numColumns={2}
+      data={eventsData}
+      keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
-        <View
-          key={item.id}
-          className="w-full bg-white space-y-2 p-4 rounded-xl my-4"
-        >
+        <View key={item.id} className="bg-white space-y-2 p-4 rounded-xl my-4 ">
           <Text className="flex">
             <Text className="text-orange font-bold"> {item.date}</Text>
             <Text className="text-background font-bold"> - </Text>
@@ -33,13 +38,23 @@ export default function Events({
               <Text className="font-bold">{item.organizer}</Text>
             </Text>
             <>
-              <MyButton icon="arrow-right" iconColor="#FF5100" iconSize={24} />
+              <MyButton
+                icon="arrow-right"
+                iconColor="#FF5100"
+                iconSize={24}
+                onPress={() =>
+                  navigation.navigate('Details', {
+                    categoryId: id,
+                    eventId: item.id,
+                  })
+                }
+              />
             </>
           </View>
         </View>
       )}
       ListHeaderComponent={
-        <View className="w-full flex flex-row items-start justify-between mb-4">
+        <View className="flex flex-row items-start justify-between mb-4">
           <View>
             <Text className="text-white text-3xl font-bold mb-3">
               Eventos disponíveis
@@ -63,11 +78,9 @@ export default function Events({
         </View>
       }
       contentContainerStyle={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
+        flex: 1,
         paddingTop: 60,
-        paddingHorizontal: 25,
+        paddingHorizontal: 20,
         paddingBottom: 20,
       }}
     />

@@ -9,14 +9,14 @@ export default function Main({ navigation }: NavigationProps<'Main'>) {
       className="bg-background"
       data={cardDataWithEventsCounts}
       numColumns={2}
-      keyExtractor={(item) => item.id}
+      keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
         <TouchableOpacity
           key={item.id}
           className={`bg-white w-44 h-44 flex flex-col justify-between p-3 rounded-xl m-2 ${
             item.eventsCount > 0 ? '' : 'hidden'
           }`}
-          onPress={() => navigation.navigate('Events', { events: item.events })}
+          onPress={() => navigation.navigate('Events', { id: item.id })}
         >
           <Image source={item.icon} alt={item.title} />
 

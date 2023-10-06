@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Main from '../screens/Main'
 import Events from '../screens/Events'
+import Details from '../screens/Details'
 const Stack = createNativeStackNavigator()
 
 export default function MainNavigation() {
@@ -16,6 +17,7 @@ export default function MainNavigation() {
       >
         <Stack.Screen name="Main" component={Main as React.FC} />
         <Stack.Screen name="Events" component={Events as React.FC} />
+        <Stack.Screen name="Details" component={Details as React.FC} />
       </Stack.Navigator>
     </NavigationContainer>
   )

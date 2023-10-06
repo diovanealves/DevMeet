@@ -1,4 +1,4 @@
-export interface Events {
+export interface EventsProps {
   id: number
   name: string
   description: string

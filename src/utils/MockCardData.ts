@@ -9,7 +9,7 @@ import MobileIcon from '../assets/MobileIcon.png'
 
 const cardData = [
   {
-    id: '1',
+    id: 1,
     icon: ServerlessIcon,
     title: 'Serverless',
     events: [
@@ -21,10 +21,18 @@ const cardData = [
         hour: '20:00',
         organizer: 'Comunidade Ballerini',
       },
+      {
+        id: 2,
+        name: 'Serverless',
+        description: 'Evento 1',
+        date: '06/OUT',
+        hour: '20:00',
+        organizer: 'Comunidade Ballerini',
+      },
     ],
   },
   {
-    id: '2',
+    id: 2,
     icon: FrontEndIcon,
     title: 'Desenvolvimento Front-end',
     events: [
@@ -39,7 +47,7 @@ const cardData = [
     ],
   },
   {
-    id: '3',
+    id: 3,
     icon: GitandDevOps,
     title: 'Git e DevOps',
     events: [
@@ -54,7 +62,7 @@ const cardData = [
     ],
   },
   {
-    id: '4',
+    id: 4,
     icon: AgileIcon,
     title: 'Agile e gestão de projetos',
     events: [
@@ -69,7 +77,7 @@ const cardData = [
     ],
   },
   {
-    id: '5',
+    id: 5,
     icon: InterfaceIcon,
     title: 'Construindo Interfaces',
     events: [
@@ -84,7 +92,7 @@ const cardData = [
     ],
   },
   {
-    id: '6',
+    id: 6,
     icon: LinuxIcon,
     title: 'Servidores Linux',
     events: [
@@ -99,7 +107,7 @@ const cardData = [
     ],
   },
   {
-    id: '7',
+    id: 7,
     icon: DesignIcon,
     title: 'Design de Interfaces',
     events: [
@@ -114,7 +122,7 @@ const cardData = [
     ],
   },
   {
-    id: '8',
+    id: 8,
     icon: MobileIcon,
     title: 'Desenvolvimento Mobile',
     events: [],
